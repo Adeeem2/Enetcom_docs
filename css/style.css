@@ -32,10 +32,11 @@ ul {
     display: inline-block;
     background-color: #0056b3;
     color: white;
-    padding: 8px 18px;
+    padding: 8px 14px;
     border-radius: 4px;
     font-size: 0.95rem;
     transition: all 0.3s;
+    margin: 10px 0;
 }
 
 .btn:hover {
