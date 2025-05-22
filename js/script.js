@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+
     // Search Functionality
     const searchInput = document.getElementById('searchInput');
     const searchButton = document.getElementById('searchButton');
@@ -31,7 +32,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Load Google Drive files from JSON
     loadDriveFiles();
+        document.querySelectorAll('.course-card h4').forEach(title => {
+        console.log(title);
+        title.addEventListener('click', () => {
+          title.parentElement.classList.toggle('open');
+
+        });
+    });
 });
+
+
 
 // Helper function to determine which JSON file to load based on the current page
 function getJsonFileForPage(pageName) {
@@ -171,6 +181,10 @@ function loadDriveFiles() {
 
                         const courseTitle = document.createElement('h4');
                         courseTitle.textContent = subject;
+                        courseTitle.addEventListener('click', () => {
+                          courseCard.classList.toggle('open');
+
+        });
                         courseCard.appendChild(courseTitle);
 
                         const documentList = document.createElement('div');
@@ -362,3 +376,35 @@ function customQuerySelector(selector) {
         return null;
     }
 }
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.course-card h4').forEach(title => {
+        console.log(title);
+        title.addEventListener('click', () => {
+          title.parentElement.classList.toggle('open');
+
+        });
+    });
+})
+document.querySelectorAll('h4.semester-title').forEach(h4 => {
+    // Create <summary> with the same content as <h4>
+    const summary = document.createElement('summary');
+    summary.className = h4.className;
+    summary.innerHTML = h4.innerHTML;
+
+    // Create <details> and append the summary
+    const details = document.createElement('details');
+    details.appendChild(summary);
+
+    // Move all sibling elements after <h4> into the <details> (until the next h4 or end)
+    let next = h4.nextElementSibling;
+    while (next && !(next.tagName === 'H4' && next.classList.contains('semester-title'))) {
+      const temp = next.nextElementSibling;
+      details.appendChild(next);
+      next = temp;
+    }
+
+    // Replace the <h4> with the new <details> element
+    h4.parentNode.replaceChild(details, h4);
+  });
