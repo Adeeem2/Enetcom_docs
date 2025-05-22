@@ -375,13 +375,13 @@ details:not([open]) .course-list {
         width: 100%;
         padding: 20px;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        transform: translateX(150%) scale(0.9);
+        transform: translateY(-150%) scale(0.9);
         transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-in-out;
         opacity: 0;
     }
 
     nav.active {
-        transform: translateX(0) scale(1);
+        transform: translateY(0) scale(1);
         opacity: 1;
     }
 
