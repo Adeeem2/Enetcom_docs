@@ -7,13 +7,50 @@
     <meta name="keywords" content="ENET'Com, Sfax, GEC, GT, GII, IDSD, LTIC, cours, TD, TP, examens">
     <title>ENET'Com Academic Archive</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="manifest" href="icons/site.webmanifest">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Loading screen styles -->
+    <style>
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+        }
+        #loading-screen.fade-out {
+            opacity: 0;
+            pointer-events: none;
+        }
+        #loading-screen img {
+            max-width: 200px;
+            animation: pulse 1s infinite alternate;
+        }
+        @keyframes pulse {
+            from { transform: scale(0.95); }
+            to { transform: scale(1.05); }
+        }
+    </style>
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <img src="icons/enetdocs.png" alt="ENET'Com Docs">
+    </div>
+
     <header>
         <div class="container">
             <div class="logo">
-                <h1><a href="index.html">ENET'Com</a></h1>
+                <a href="index.html"><img src="icons/enetdocs.png" alt="ENET'Com Docs" ></a>
                 <p>École Nationale d'Électronique et des Télécommunications de Sfax</p>
             </div>
             <nav>
@@ -38,7 +75,7 @@
             <p>Access course materials, lecture notes, and academic resources organized by years, semesters, and subjects</p>
         </div>
     </section>
- 
+
     <section class="programs">
         <div class="container">
             <div class="branches">
@@ -62,16 +99,29 @@
                     <p>Engineering of Electronic Communication Systems</p>
                     <a href="gec.html" class="btn">Browse Documents</a>
                 </div>
+            </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 ENET'Com. All rights reserved.</p>
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p>&copy; 2025 ENET'Com. All rights reserved.</p>
+                </div>
 
+            </div>
         </div>
     </footer>
 
     <script src="js/script.js"></script>
+    <script>
+        // Loading screen functionality
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.getElementById('loading-screen').classList.add('fade-out');
+            }, 1000);
+        });
+    </script>
 </body>
 </html>
