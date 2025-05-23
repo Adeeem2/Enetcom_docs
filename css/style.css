@@ -170,6 +170,7 @@ nav ul li a:hover, nav ul li a.active {
 .programs {
     padding: 60px 0;
     text-align: center;
+    flex: 1;
 }
 
 .branches {
