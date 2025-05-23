@@ -379,12 +379,8 @@ details[open] summary {
 .course-list {
     opacity: 1;
     transition: opacity 0.5s ease, max-height 0.8s ease;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: space-between;
-    margin-bottom: 20px;
-    width: 100%;
+    display: block;
+    width : 100%;
 }
 details:not([open]) + .course-list,
 details:not([open]) .course-list {
@@ -399,8 +395,6 @@ details:not([open]) .course-list {
     padding: 15px;
     transition: all 0.3s ease;
     margin-bottom: 10px;
-    width: calc(33.33% - 15px);
-    min-width: 250px;
     flex-grow: 1;
     border-top: 3px solid transparent;
     border-left: 3px solid transparent;
