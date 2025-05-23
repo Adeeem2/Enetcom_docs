@@ -11,6 +11,9 @@ body {
     color: #333;
     background-color: #f8f9fa;
     overflow-x: hidden;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
 
 .container {
@@ -289,6 +292,8 @@ footer .container {
 /* Document List Styles */
 .document-section {
     padding: 60px 0;
+    overflow: auto;
+    flex: 1;
 }
 
 .document-section h2 {
@@ -321,7 +326,11 @@ footer .container {
     margin-bottom: 20px;
     margin-top: 10px;
 }
-
+.year-navigation{
+    display : block;
+    margin: 0 auto;
+    text-align: center;
+}
 .year-section h3 {
     background-color: #0056b3;
     color: white;
@@ -368,7 +377,6 @@ details[open] summary {
 }
 .course-list {
     opacity: 1;
-    max-height: 2000px;
     transition: opacity 0.5s ease, max-height 0.8s ease;
     display: flex;
     flex-wrap: wrap;
@@ -420,6 +428,7 @@ details:not([open]) .course-list {
     margin-bottom: 10px;
     cursor: pointer;
     position: relative;
+    padding: 16px;
 }
 
 .course-card h4::after {
