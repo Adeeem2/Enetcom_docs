@@ -15,22 +15,27 @@
     <header>
         <div class="container">
             <div class="logo">
-                <a href="index.html"><img src="icons/enetdocs.png" alt="ENET'Com Docs"></a>
+                <a href="index.html"><img src="icons/enetdocs.png" alt="ENET'Com Docs" ></a>
                 <p>École Nationale d'Électronique et des Télécommunications de Sfax</p>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="idsd.html">IDSD</a></li>
-                    <li><a href="gii.html">GII</a></li>
-                    <li><a href="gt.html">GT</a></li>
-                    <li><a href="gec.html" >GEC</a></li>
-                    <li><a href="ltic.html">LTIC</a></li>
-                    <li><a href="about.html" class="active">About</a></li>
-                </ul>
-            </nav>
-            <div class="menu-toggle">
-                <i class="fas fa-bars"></i>
+            <div class="navbar-container">
+                <nav id="navbar">
+                    <a href="index.html" >Home</a>
+                    <a href="idsd.html">IDSD</a>
+                    <a href="gii.html">GII</a>
+                    <a href="gt.html">GT</a>
+                    <a href="gec.html">GEC</a>
+                    <a href="ltic.html">LTIC</a>
+                    <a href="about.html" class="active">About</a>
+                </nav>
+                <div class="theme-toggle">
+                    <button id="theme-toggle-btn" aria-label="Toggle dark/light mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
             </div>
         </div>
     </header>
@@ -41,13 +46,13 @@
             <p>Learn more about the creator of this academic archive</p>
         </div>
     </section>
-
+    <canvas id="galaxy"></canvas>
     <section class="document-section">
         <div class="container">
             <div class="info-box">
                 <p><i class="fas fa-user"></i> About the Creator</p>
             </div>
-            
+
             <div class="about-me">
                 <div style="padding: 20px;">
                     <p>This website was created by Adem Taktek, an engineering student at ENET'Com, with the aim of making academic documents easily accessible for all students across the branches: IDSD, GII, GT, GEC and LTIC.</p>
@@ -63,9 +68,11 @@
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 ENET'Docs. All rights reserved.</p>
+    <footer class="blurry-footer">
+        <div class="content">
+            <div class="footer-info">
+                <p>&copy; 2025 ENET'docs. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 

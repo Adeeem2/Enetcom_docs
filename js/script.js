@@ -1,8 +1,46 @@
-// Mobile
+// Mobile and Theme Toggle
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('nav');
+    const themeToggleBtn = document.getElementById('theme-toggle-btn');
+    const moonIcon = '<i class="fas fa-moon"></i>';
+    const sunIcon = '<i class="fas fa-sun"></i>';
 
+    // Theme toggle functionality
+    if (themeToggleBtn) {
+        // Check for saved theme preference or use default light theme
+        const currentTheme = localStorage.getItem('theme') || 'light';
+
+        // Apply the saved theme on page load
+        if (currentTheme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            themeToggleBtn.innerHTML = sunIcon;
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            themeToggleBtn.innerHTML = moonIcon;
+        }
+
+        // Toggle theme when button is clicked
+        themeToggleBtn.addEventListener('click', function() {
+            let theme = 'light';
+
+            // If current theme is light, switch to dark
+            if (document.documentElement.getAttribute('data-theme') === 'light') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                themeToggleBtn.innerHTML = sunIcon;
+                theme = 'dark';
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                themeToggleBtn.innerHTML = moonIcon;
+                theme = 'light';
+            }
+
+            // Save theme preference to localStorage
+            localStorage.setItem('theme', theme);
+        });
+    }
+
+    // Mobile menu toggle
     if (menuToggle) {
         menuToggle.addEventListener('click', function() {
             nav.classList.toggle('active');
@@ -30,6 +68,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    // Ajouter après le code de toggle du thème
+
 });
 
 
@@ -235,3 +275,70 @@ document.querySelectorAll('h4.semester-title').forEach(h4 => {
 
     h4.parentNode.replaceChild(details, h4);
   });
+
+const canvas = document.getElementById("galaxy");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const particles = [];
+const PARTICLE_COUNT = 150;
+
+function random(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+class Particle {
+  constructor() {
+    this.reset();
+  }
+
+  reset() {
+    this.x = random(0, canvas.width);
+    this.y = random(0, canvas.height);
+    this.size = random(0.3, 1);
+    this.speedX = random(-0.1, 0.1);
+    this.speedY = random(-0.2, -0.05); // upward drift
+    this.opacity = random(0.3, 1);
+  }
+
+  update() {
+    this.x += this.speedX;
+    this.y += this.speedY;
+
+    if (this.y < 0 || this.x < 0 || this.x > canvas.width) {
+      this.reset();
+      this.y = canvas.height;
+    }
+  }
+
+  draw() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+    ctx.shadowColor = '#ffffff';
+    ctx.shadowBlur = 5;
+    ctx.fill();
+  }
+}
+
+for (let i = 0; i < PARTICLE_COUNT; i++) {
+  particles.push(new Particle());
+}
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach(p => {
+    p.update();
+    p.draw();
+  });
+  requestAnimationFrame(animate);
+}
+
+animate();
+
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
