@@ -13,12 +13,18 @@
     --border-color: #eee;
     --info-box-bg: #e8f4ff;
     --parcolor: #666;
+    --h4color: #0056b3;
+    --h2color : #0056b3;
+    --btncolor: #0056b3;
+    --bordercard: #ff831d;
+    --yearsection : #0056b3;
+    --semestersection: #007bff;
 }
 
 [data-theme="dark"] {
     --bg-color: #0a0a20;
     --text-color: #e0e0e0;
-    --header-bg: #0f0f2a;
+    --header-bg: #0e1329;
     --card-bg: transparent;
     --primary-color: #4a8fe7;
     --secondary-color: #2a6fd9;
@@ -29,6 +35,12 @@
     --border-color: #2a2a4a;
     --info-box-bg: #1a1a3a;
     --parcolor : white;
+    --h4color: white;
+    --h2color : white;
+    --btncolor: #0E2148;
+    --bordercard: #7965C1;
+    --yearsection: #40387a;
+    --semestersection: #433D8B;
 }
 
 * {
@@ -59,7 +71,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(125deg, #0a0a20, #1a1a3a, #0f0f2a, #2a2a4a);
+    background: linear-gradient(125deg, #27214f, #013051, #0f0f2a, #2a2a4a);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
     z-index: -2;
@@ -102,7 +114,7 @@ ul {
 
 .btn {
     display: inline-block;
-    background-color: #0056b3;
+    background-color: var(--btncolor);
     color: white;
     padding: 10px 18px;
     border-radius: 30px;
@@ -247,7 +259,8 @@ nav a:hover, nav a.active {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(180deg, rgba(19,71,129,0.85) 0%, rgba(38,99,175,0.7) 10%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(180deg, #27548A 10%,  rgba(19,71,129,0.85) 100%);
+    mask-image : linear-gradient(to top, transparent , black 100%);
     color : #fff;
     border : none;
     border-radius: 0;
@@ -258,6 +271,7 @@ nav a:hover, nav a.active {
 }
 
 .hero h2 {
+    z-index: 1;
     font-size: 2.5rem;
     text-align: center;
     margin-top: 50px;
@@ -321,7 +335,7 @@ nav a:hover, nav a.active {
 }
 
 .branch h3 {
-    color: #0056b3;
+    color: var(--h2color);
     margin-bottom: 12px;
     font-size: 1.5rem;
     font-weight: 700;
@@ -394,7 +408,7 @@ footer .container {
 }
 
 .document-section h2 {
-    color: #0056b3;
+    color: var(--h2color);
     margin-bottom: 30px;
     text-align: center;
 }
@@ -403,7 +417,8 @@ footer .container {
     background-color: #e8f4ff;
     border-left: 4px solid #0056b3;
     padding: 15px 20px;
-    margin-bottom: 30px;
+    max-width: 60%;
+    margin: 20px auto;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
@@ -429,7 +444,7 @@ footer .container {
     text-align: center;
 }
 .year-section h3 {
-    background-color: #0056b3;
+    background-color: var(--yearsection);
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
@@ -437,7 +452,7 @@ footer .container {
 }
 
 .semester-title {
-    background-color: #007bff;
+    background-color: var(--semestersection);
     color: white;
     border-radius: 4px;
     margin: 10px 0;
@@ -449,6 +464,9 @@ footer .container {
 }
 .semester-title:hover {
     background-color: #ff831d;
+}
+[data-theme="dark"] .semester-title:hover {
+    background-color: #9677db;
 }
 summary {
     background-color: #0056b3;
@@ -519,9 +537,10 @@ details:not([open]) .course-list {
 }
 
 .course-card:hover {
-    border-top: 3px solid #ff831d;
+    border-top: 3px solid var(--bordercard);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
+
 
 .course-card.open {
     box-shadow: 0 8px 25px rgba(0, 86, 179, 0.15);
@@ -529,7 +548,7 @@ details:not([open]) .course-list {
 }
 
 .course-card h4 {
-    color: #0056b3;
+    color: var(--h4color);
     margin-bottom: 10px;
     cursor: pointer;
     position: relative;
@@ -563,7 +582,23 @@ details:not([open]) .course-list {
     opacity: 1;
     width: 100%;
 }
-
+.document-list::-webkit-scrollbar {
+    width: 8px;
+    background: var(--card-bg);
+    border-radius: 8px;
+}
+.document-list::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #0056b3, #ff831d);
+    border-radius: 8px;
+    min-height: 30px;
+}
+[data-theme="dark"] .document-list::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #677db9, #bccfdb);
+}
+.document-list::-webkit-scrollbar-track {
+    background: var(--card-bg);
+    border-radius: 8px;
+}
 .document-item {
     display: flex;
     align-items: center;
@@ -609,6 +644,10 @@ details:not([open]) .course-list {
         display: none;
     }
 
+    .info-box{
+        max-width: 100%;
+        margin: 20px auto;
+    }
     nav {
         position: absolute;
         display: flex;
