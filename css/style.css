@@ -25,6 +25,7 @@
     --borderbottom : #0056b3;
     --bordertop : linear-gradient(90deg, #0056b3, #00a8ff);
     --gradient2 : #EEEEEE;
+    --borderleft : #0056b3;
 }
 
 [data-theme="dark"] {
@@ -53,6 +54,7 @@
     --borderbottom : #E4B1F0;
     --bordertop : linear-gradient(90deg, #7E60BF, #E4B1F0);
     --gradient2 : linear-gradient(125deg, #4FBDBA, #98BAE7);
+    --borderleft : #FFE1FF;
 }
 
 * {
@@ -155,7 +157,7 @@ header {
     position: fixed;
     top: 25px;
     z-index: 100;
-    border-bottom: 2px solid #0056b3;
+    border-bottom: 2px solid var(--borderleft);
     margin-left: auto;
     margin-right: auto;
 
@@ -255,7 +257,7 @@ nav a {
 }
 
 nav a:hover, nav a.active {
-    color: var(--primary-color);
+    color: var(--borderleft);
 }
 
 .menu-toggle {
@@ -477,23 +479,18 @@ footer .container {
 }
 
 .info-box {
-    background-color: #e8f4ff;
-    border-left: 4px solid #0056b3;
-    padding: 15px 20px;
-    max-width: 60%;
-    margin: 20px auto;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    position : relative;
+    text-align: center;
 }
 
 .info-box p {
-    color: #333;
+    color: var(--parcolor);
     font-size: 1rem;
     margin: 0;
 }
 
 .info-box i {
-    color: #0056b3;
+    color: var(--borderleft);
     margin-right: 10px;
 }
 
@@ -503,7 +500,7 @@ footer .container {
 }
 .year-navigation{
     display : block;
-    margin: 0 auto;
+    margin: 20px auto;
     text-align: center;
 }
 .year-section h3 {
@@ -592,7 +589,7 @@ details:not([open]) .course-list {
 }
 .about-me{
     background-color: var(--card-bg);
-    border-left: 4px solid #0056b3;
+    border-left: 4px solid var(--borderleft);
     padding: 15px 20px;
 
     border-radius: 5px;
@@ -609,7 +606,7 @@ details:not([open]) .course-list {
 
 .course-card.open {
     box-shadow: 0 8px 25px rgba(0, 86, 179, 0.15);
-    border-left: 3px solid #0056b3;
+    border-left: 3px solid var(--borderleft);
 }
 
 .course-card h4 {
