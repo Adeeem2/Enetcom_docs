@@ -19,6 +19,12 @@
     --bordercard: #ff831d;
     --yearsection : #0056b3;
     --semestersection: #007bff;
+    --gradient1: #CDC1FF;
+    --herop : #4B5563FF;
+    --heroh2 : #474F7A;
+    --borderbottom : #0056b3;
+    --bordertop : linear-gradient(90deg, #0056b3, #00a8ff);
+    --gradient2 : #EEEEEE;
 }
 
 [data-theme="dark"] {
@@ -41,6 +47,12 @@
     --bordercard: #7965C1;
     --yearsection: #40387a;
     --semestersection: #433D8B;
+    --gradient : linear-gradient(125deg, #FFE1FF, #E4B1F0);
+    --herop : white;
+    --heroh2 : #B8A0FF;
+    --borderbottom : #E4B1F0;
+    --bordertop : linear-gradient(90deg, #7E60BF, #E4B1F0);
+    --gradient2 : linear-gradient(125deg, #4FBDBA, #98BAE7);
 }
 
 * {
@@ -259,19 +271,64 @@ nav a:hover, nav a.active {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(180deg, #27548A 10%,  rgba(19,71,129,0.85) 100%);
-    mask-image : linear-gradient(to top, transparent , black 100%);
-    color : #fff;
-    border : none;
+    position: relative;
     border-radius: 0;
-    padding: 60px 20px;
+    padding: 80px 20px;
     width: 100%;
-    backdrop-filter: blur(10px);      /* This applies the blur effect */
-    -webkit-backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+.blur-square1 {
+    position: fixed;
+    width: 700px;
+    height: 900px;
+    left : 50%;
+    top : 0;
+    margin : -500px -800px;
+    background: var(--gradient1); /* Or any other color */
+    filter: blur(100px); /* Adjust the blur radius */
+    opacity: 0.3; /* Make it soft */
+    z-index: -1; /* Send it to the background */
+    border-radius: 20px; /* Optional: for rounded edges */
+    rotate: -80deg;
+}
+@keyframes fadeout {
+    to {
+        opacity: 0;
+        filter: blur(200px);
+        transform: scale(1.2);
+    }
+}
+.fadeout {
+    animation: fadeout 1s ease-in-out forwards;
+}
+@keyframes fadein {
+    0% { opacity : 0;}
+    100% { opacity : 0.4;}
+}
+.fadein {
+    animation: fadein 1s ease-in-out forwards;
+}
+.blur-square2 {
+    position: fixed;
+    width: 400px;
+    height: 700px;
+    top : 0;
+    left : 50%;
+    margin : -350px 70px;
+    background: var(--gradient2); /* Or any other color */
+    filter: blur(100px); /* Adjust the blur radius */
+    opacity: 0.4; /* Make it soft */
+    z-index: -1; /* Send it to the background */
+    border-radius: 20px; /* Optional: for rounded edges */
+    rotate: 40deg;
 }
 
+.hero * {
+    position: relative;
+    z-index: 2;
+}
 .hero h2 {
-    z-index: 1;
+    color: var(--heroh2);
     font-size: 2.5rem;
     text-align: center;
     margin-top: 50px;
@@ -279,13 +336,14 @@ nav a:hover, nav a.active {
 }
 
 .hero p {
+    color: var(--herop);
     font-size: 1.2rem;
     text-align: center;
     margin-bottom: 30px;
 }
 /* Programs Section */
 .programs {
-    padding: 60px 0;
+    padding: 20px 0;
     text-align: center;
     flex: 1;
 }
@@ -318,7 +376,7 @@ nav a:hover, nav a.active {
     left: 0;
     width: 100%;
     height: 5px;
-    background: linear-gradient(90deg, #0056b3, #00a8ff);
+    background: var(--bordertop);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.4s ease;
@@ -327,7 +385,7 @@ nav a:hover, nav a.active {
 .branch:hover {
     transform: translateY(-10px) scale(1.03);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    border-bottom: 5px solid #0056b3;
+    border-bottom: 5px solid var(--borderbottom);
 }
 
 .branch:hover::before {
@@ -588,7 +646,7 @@ details:not([open]) .course-list {
     border-radius: 8px;
 }
 .document-list::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, #0056b3, #ff831d);
+    background: linear-gradient(135deg, #ff831d, white);
     border-radius: 8px;
     min-height: 30px;
 }

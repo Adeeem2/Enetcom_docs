@@ -299,7 +299,7 @@ class Particle {
     this.y = random(0, canvas.height);
     this.size = random(0.3, 1);
     this.speedX = random(-0.1, 0.1);
-    this.speedY = random(-0.2, -0.05); // upward drift
+    this.speedY = random(-0.4, -0.1); // upward drift
     this.opacity = random(0.3, 1);
   }
 
@@ -341,4 +341,21 @@ animate();
 window.addEventListener("resize", () => {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
+});
+window.addEventListener('scroll', function() {
+    const blur1 = document.querySelector('.blur-square1');
+    const blur2 = document.querySelector('.blur-square2');
+    if (window.scrollY > 120) {
+        blur1?.classList.remove('fadein');
+        blur1?.classList.add('fadeout');
+
+        blur2?.classList.remove('fadein');
+        blur2?.classList.add('fadeout');
+    } if( window.scrollY <= 120) {
+        blur1?.classList.remove('fadeout');
+        blur1?.classList.add('fadein');
+
+        blur2?.classList.remove('fadeout');
+        blur2?.classList.add('fadein');
+    }
 });
