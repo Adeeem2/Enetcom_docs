@@ -264,7 +264,7 @@ nav a:hover, nav a.active {
     display: none;
     font-size: 1.5rem;
     cursor: pointer;
-    color: #0056b3;
+    color: var(--borderleft);
 }
 
 
@@ -467,7 +467,7 @@ footer .container {
 
 /* Document List Styles */
 .document-section {
-    padding: 60px 0;
+    padding: 10px 0;
     overflow: auto;
     flex: 1;
 }
