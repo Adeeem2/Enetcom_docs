@@ -99,6 +99,19 @@
     </section>
 
     <canvas id="galaxy"></canvas>
+
+    <section class="carousel-container">
+        <div class="info-box" style="margin-bottom: 20px;">
+            <p><i class="fas fa-info-circle"></i> Click on the arrows to navigate through the latest updates and announcements.</p>
+        </div>
+        <div style ="display: flex;" >
+            <button id="prev-btn" class="carousel-btn"><i class="fa-solid fa-chevron-left"></i></button>
+            <div class="carousel-nav">
+                <div class="carousel" id="carousel"></div>
+            </div>
+            <button id="next-btn" class="carousel-btn"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+    </section>
     <section class="programs">
         <div class="container">
             <div class="branches">
@@ -150,6 +163,7 @@
     </footer>
 
     <script src="js/script.js"></script>
+    <script src="js/update.js"></script>
     <script>
         window.addEventListener('load', function() {
             setTimeout(function() {
