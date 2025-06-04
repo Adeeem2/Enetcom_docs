@@ -2,7 +2,8 @@ const updates = [
     "16/05/2025 : LTIC section will be added soon once i gather the documents.",
     "21/05/2025 : Improved navigation and fixed some bugs.",
     "23/05/2025 : Added dark mode toggle and improved UI.",
-    "03/06/2025 : Added a new section for upcoming features."
+    "03/06/2025 : Added a new section for upcoming features.",
+    "04/06/2025 : Added a pomodoro timer to help with productivity.",
 ];
 const carousel = document.getElementById("carousel");
 let i = 0;

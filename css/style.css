@@ -46,8 +46,8 @@
     --h2color : white;
     --btncolor: #bb6931;
     --bordercard: #7965C1;
-    --yearsection: #40387a;
-    --semestersection: #433D8B;
+    --yearsection: #7E60BF;
+    --semestersection: #C68FE6;
     --gradient : linear-gradient(125deg, #FFE1FF, #E4B1F0);
     --herop : white;
     --heroh2 : #B8A0FF;
@@ -272,7 +272,7 @@ nav a:hover, nav a.active {
 .hero {
     position: relative;
     border-radius: 0;
-    padding: 80px 20px;
+    padding: 80px 40px 20px;
     width: 100%;
     overflow: hidden;
 }
@@ -719,7 +719,7 @@ details:not([open]) .course-list {
 }
 .slide p{
     text-align: center;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     color: var(--parcolor);
     line-height: 1.5;
     max-width: 90%;
@@ -736,7 +736,7 @@ details:not([open]) .course-list {
     }
 }
 /* Responsive Styles */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
 
     header {
         width: 90%
