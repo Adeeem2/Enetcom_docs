@@ -727,8 +727,91 @@ details:not([open]) .course-list {
     margin: 0 auto;
     word-break: break-word;
 }
+.music-player {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family : 'Segoe UI',sans-serif;
+}
+.player-container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: var(--card-bg);
+    border-radius: 20px;
+    padding : 20px 30px;
+    width: 500px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow : visible;
+}
+.album-art{
+    position : absolute;
+    left : -60px;
+    top : 0%;
+    overflow: hidden;
+}
+.album-art img{
+    width:120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+.album-art::after {
+    content:'';
+    position: absolute;
+    margin-top: 60px;
+    left : 50%;
+    width : 20px;
+    height : 20px;
+    background: rgba(255, 255, 255, 0.8);  /* center color */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.4);
+}
+@keyframes rotation {
+    0%{transform : rotate(-360deg)}
+    100%{transform : rotate(0deg)}
+}
+.trackinfo{
+    margin-left : 60px;
+    font-size: 1.1rem;
+}
+.trackinfo p {
+    margin: 5px 0;
+    padding-bottom: 10px;
+    color: var(--parcolor);
+}
+.progress-bar{
+    width : 70%;
+    height : 5px;
+    border-radius: 5px;
+    border : 1px solid var(--borderleft);
+    overflow: hidden;
+    position: absolute;
 
-
+}
+.progress {
+    width: 0;
+    height: 100%;
+    background: var(--borderleft);
+}
+.controls {
+    display: flex;
+    align-items: center;
+    margin-left : 10px;
+    gap: 10px;
+}
+.controls .btn {
+    border : none;
+    box-shadow : none;
+    padding : 0;
+    margin : 0;
+    font-size : 1.3rem;
+    cursor: pointer;
+    transition : transform 0.3s ease;
+}
 
 @media(max-width: 1000px){
     .logo p {
@@ -818,6 +901,53 @@ details:not([open]) .course-list {
         flex-direction: column;
         text-align: center;
     }
+    .player-container {
+        flex-direction: column;
+        align-items: center;
+        margin : 0 auto;
+        width : 75%;
+    }
+    .album-art {
+        position: relative;
+        margin-bottom: -15px;
+        left : 0;
+        top : -30px;
+    }
+    .album-art img {
+        width: 100px;
+        height: 100px;
+    }
+    .album-art::after{
+        width: 15px;
+        height: 15px;
+        margin-top: 50px;
+    }
+
+    .controls {
+        justify-content: center;
+        gap: 5px;
+        margin : 0 20px 10px;
+    }
+    .controls .btn {
+        font-size: 1.2rem;
+    }
+    .trackinfo {
+        margin-left: 0;
+        margin-top: 0;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .progress-bar {
+        position : absolute;
+        width: 60%;
+        height: 5px;
+        left: 50%;
+        bottom: 70px;
+        transform: translateX(-50%);
+
+    }
+
+
 
 
 }

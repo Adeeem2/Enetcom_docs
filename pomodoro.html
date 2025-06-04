@@ -14,8 +14,7 @@
         .pomodoro-section {
             display: flex;
             justify-content: center;
-            align-items: center;
-            min-height: 60vh;
+            min-height: 40vh;
         }
         .pomodoro-timer {
             background: var(--card-bg);
@@ -27,7 +26,7 @@
             margin: 20px auto;
         }
         .pomodoro-settings .btn{
-            font-size: 0.9rem;
+            font-size: 1.1rem;
             border : none;
             color : var(--borderleft);
             box-shadow: none;
@@ -62,7 +61,7 @@
                 font-size: 2.5rem;
             }
             .pomodoro-settings .btn {
-                font-size: 0.75rem;
+                font-size: 0.93rem;
             }
             .pomodoro-settings{
                 justify-content: center;
@@ -128,6 +127,26 @@
             </div>
         </div>
     </section>
+    <section class="music-player">
+        <div class="player-container">
+            <div class="album-art">
+                <img id = "album" src="" alt="Album Art">
+            </div>
+            <div class="trackinfo">
+                <h3 id="title">Titre</h3>
+                <p id="artist">Artist</p>
+                <div class="progress-bar">
+                    <div class="progress" id="progress"></div>
+                </div>
+            </div>
+            <div class="controls">
+                <button id="prev-btn" class="btn"><i class="fas fa-step-backward"></i></button>
+                <button id="play-btn" class="btn"><i class="fas fa-play"></i></button>
+                <button id="next-btn" class="btn"><i class="fas fa-step-forward"></i></button>
+            </div>
+            <audio id="audio"></audio>
+        </div>
+    </section>
 
     <footer class="blurry-footer">
         <div class="content">
@@ -139,5 +158,6 @@
 
     <script src="js/script.js"></script>
     <script src="js/pomodoro.js"></script>
+    <script src="js/music.js"></script>
 </body>
 </html>
