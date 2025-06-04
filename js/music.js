@@ -22,6 +22,7 @@ const playlist = [
   const prevBtn = document.getElementById("prev-btn");
   const nextBtn = document.getElementById("next-btn");
   const progress = document.getElementById("progress");
+  const container = document.getElementsByClassName("player-container");
 
   function loadTrack(index) {
     const track = playlist[index];
@@ -30,6 +31,7 @@ const playlist = [
     artist.textContent = track.artist;
     albumImage.src = track.img;
     playPauseBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+    container[0].style.setProperty('--bg-img', `url(../${track.img})`);
   }
 
   function playPause() {

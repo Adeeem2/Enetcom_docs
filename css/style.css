@@ -26,6 +26,7 @@
     --bordertop : linear-gradient(90deg, #0056b3, #00a8ff);
     --gradient2 : #EEEEEE;
     --borderleft : #0056b3;
+    --bg-img: #f0F0F0;
 }
 
 [data-theme="dark"] {
@@ -737,12 +738,26 @@ details:not([open]) .course-list {
     position: relative;
     display: flex;
     align-items: center;
-    background: var(--card-bg);
     border-radius: 20px;
     padding : 20px 30px;
     width: 500px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     overflow : visible;
+}
+.player-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--bg-img);
+    background-size: cover;
+    background-position: center; /* Modifiez ici pour gérer la position (ex: top, left, right, bottom, center) */
+    opacity: 0.2; /* Opacité faible */
+    z-index: 0;
+    border-radius: 20px;
+    pointer-events: none;
 }
 .album-art{
     position : absolute;
