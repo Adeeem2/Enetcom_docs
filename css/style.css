@@ -755,7 +755,6 @@ details:not([open]) .course-list {
     height: 120px;
     border-radius: 50%;
     object-fit: cover;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     margin-bottom: 15px;
 }
 .album-art::after {
@@ -909,13 +908,13 @@ details:not([open]) .course-list {
     }
     .album-art {
         position: relative;
-        margin-bottom: -15px;
         left : 0;
         top : -30px;
     }
     .album-art img {
         width: 100px;
         height: 100px;
+        margin-bottom: 0;
     }
     .album-art::after{
         width: 15px;
@@ -926,10 +925,10 @@ details:not([open]) .course-list {
     .controls {
         justify-content: center;
         gap: 5px;
-        margin : 0 20px 10px;
+        margin : 10px 20px 10px;
     }
     .controls .btn {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
     .trackinfo {
         margin-left: 0;
@@ -942,7 +941,7 @@ details:not([open]) .course-list {
         width: 60%;
         height: 5px;
         left: 50%;
-        bottom: 70px;
+        bottom: 80px;
         transform: translateX(-50%);
 
     }
