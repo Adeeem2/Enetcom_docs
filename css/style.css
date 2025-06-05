@@ -683,7 +683,7 @@ details:not([open]) .course-list {
 }
 
 .document-item a:hover {
-    color: #0056b3;
+    color: var(--borderleft);
 }
 .carousel-container{
     align-items: center;
@@ -804,12 +804,14 @@ details:not([open]) .course-list {
     border : 1px solid var(--borderleft);
     overflow: hidden;
     position: absolute;
+    cursor: pointer;
 
 }
 .progress {
     width: 0;
     height: 100%;
     background: var(--borderleft);
+    transition: width 0.2s ease;
 }
 .controls {
     display: flex;

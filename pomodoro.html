@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - ENET'Com Academic Archive</title>
+    <title>Pomodoro</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
@@ -55,13 +55,14 @@
         @media (max-width: 600px) {
             .pomodoro-timer {
                 width: 90%;
-                padding: 20px;
+                padding: 12px;
             }
             #timer-display {
                 font-size: 2.5rem;
             }
             .pomodoro-settings .btn {
-                font-size: 0.93rem;
+                font-size: 0.95rem;
+                padding: 8px 12px;
             }
             .pomodoro-settings{
                 justify-content: center;
@@ -130,12 +131,12 @@
     <section class="music-player">
         <div class="player-container">
             <div class="album-art">
-                <img id ="album" src="" alt="Album Art">
+                <img id="album" src="" alt="Album Art">
             </div>
             <div class="trackinfo">
                 <h3 id="title">Titre</h3>
                 <p id="artist">Artist</p>
-                <div class="progress-bar">
+                <div class="progress-bar" id="progressbar">
                     <div class="progress" id="progress"></div>
                 </div>
             </div>
