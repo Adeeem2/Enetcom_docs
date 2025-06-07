@@ -1,5 +1,11 @@
 const playlist = [
     {
+        title : "Saturn",
+        artist : "Yuji Ohno",
+        src : "sound/saturn.mp3",
+        img : "icons/saturn.jpg"
+    },
+    {
       title: "Famax",
       artist: "Raffa Guido",
       src: "sound/Famax.mp3",
