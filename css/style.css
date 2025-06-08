@@ -45,13 +45,13 @@
     --parcolor : white;
     --h4color: white;
     --h2color : white;
-    --btncolor: #bb6931;
+    --btncolor: #BE7B72;
     --bordercard: #7965C1;
-    --yearsection: #7E60BF;
-    --semestersection: #C68FE6;
+    --yearsection: #535C91;
+    --semestersection: #9290C3;
     --gradient : linear-gradient(125deg, #FFE1FF, #E4B1F0);
     --herop : white;
-    --heroh2 : #B8A0FF;
+    --heroh2 : white;
     --borderbottom : #E4B1F0;
     --bordertop : linear-gradient(90deg, #7E60BF, #E4B1F0);
     --gradient2 : linear-gradient(125deg, #4FBDBA, #98BAE7);
@@ -527,7 +527,7 @@ footer .container {
     background-color: #ff831d;
 }
 [data-theme="dark"] .semester-title:hover {
-    background-color: #9677db;
+    background-color: #1B1A55;
 }
 summary {
     background-color: #0056b3;
@@ -581,7 +581,7 @@ details:not([open]) .course-list {
     background-color: var(--card-bg);
     border-radius: 8px;
     box-shadow: 0 5px 15px var(--shadow-color);
-    padding: 15px;
+    padding: 5px;
     transition: all 0.3s ease;
     margin-bottom: 10px;
     flex-grow: 1;
@@ -667,6 +667,7 @@ details:not([open]) .course-list {
     align-items: center;
     padding: 8px 0;
     border-bottom: 1px solid #eee;
+    margin : 0 15px;
 }
 
 .document-item:last-child {
