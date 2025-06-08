@@ -921,6 +921,7 @@ details:not([open]) .course-list {
     .player-container {
         flex-direction: column;
         align-items: center;
+        max-width: 500px;
         margin : 0 auto;
         width : 75%;
     }
