@@ -155,12 +155,20 @@ function loadDriveFiles() {
                             }
                         });
                     }
+                    const sortedSubjects = Object.keys(filesBySubject).sort((a, b) => {
+                        if (a.toLowerCase().includes('examen & ds')) return -1;
+                        if (b.toLowerCase().includes('examen & ds')) return 1;
+                        return 0;
+                    });
 
-                    for (const subject in filesBySubject) {
+                    for (const subject of sortedSubjects) {
                         const courseCard = document.createElement('div');
                         courseCard.className = 'course-card';
 
                         const courseTitle = document.createElement('h4');
+                        if(subject.toLowerCase().includes('examen & ds')){
+                            courseCard.style.borderColor = 'var(--borderleft)';
+                        }
                         courseTitle.textContent = subject;
                         courseTitle.addEventListener('click', () => {
                           courseCard.classList.toggle('open');

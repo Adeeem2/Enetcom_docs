@@ -637,8 +637,12 @@ details:not([open]) .course-list {
     opacity: 0;
     transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out;
     margin-top: 15px;
-
 }
+.document-list p {
+    margin : 0 15px;
+    padding : 8px 0;
+}
+
 .course-card.open .document-list {
     max-height: 200px;
     overflow-y: auto;
