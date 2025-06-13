@@ -603,7 +603,6 @@ details:not([open]) .course-list {
     height: 100%;
     border-radius: 1.4rem;
     backdrop-filter: blur(1px);
-    -webkit-backdrop-filter: blur(1px);
     box-shadow: inset -10px -8px 0px -11px rgba(255, 255, 255, 1),
     inset 0px -9px 0px -8px rgba(255, 255, 255, 1);
     opacity: 0.6;
