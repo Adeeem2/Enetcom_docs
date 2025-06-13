@@ -863,6 +863,10 @@ details:not([open]) .course-list {
 }
 /* Responsive Styles */
 @media (max-width: 1000px) {
+    .course-card,
+    .course-card::after {
+        position: relative;
+    }
 
     header {
         width: 90%
@@ -990,10 +994,6 @@ details:not([open]) .course-list {
         transform: translateX(-50%);
 
     }
-
-
-
-
 }
 
 @media (max-width: 480px) {
