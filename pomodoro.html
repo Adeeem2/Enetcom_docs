@@ -11,19 +11,39 @@
     <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
     <link rel="manifest" href=icons"/site.webmanifest">
     <style>
+
         .pomodoro-section {
             display: flex;
             justify-content: center;
             min-height: 40vh;
         }
         .pomodoro-timer {
-            background: var(--card-bg);
-            border-radius: 16px;
-            box-shadow: 0 8px 32px var(--shadow-color);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(1px) saturate(180%);
+            border-radius: 2rem;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2), inset 0 4px 20px rgba(255, 255, 255, 0.2);
             padding: 40px 30px;
             text-align: center;
             max-width: 500px;
             margin: 20px auto;
+        }
+        .pomodoro-timer::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 2rem;
+            backdrop-filter: blur(1px);
+            -webkit-backdrop-filter: blur(1px);
+            box-shadow: inset -10px -8px 0px -11px rgba(255, 255, 255, 1),
+            inset 0px -9px 0px -8px rgba(255, 255, 255, 1);
+            opacity: 0.6;
+            z-index: -1;
+            filter: blur(1px) drop-shadow(10px 4px 6px black) brightness(115%);
+            pointer-events: none;
+
         }
         .pomodoro-settings .btn{
             font-size: 1.1rem;

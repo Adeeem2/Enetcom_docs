@@ -356,38 +356,43 @@ nav a:hover, nav a.active {
     margin-top: 20px;
 }
 
-.branch {
-    background-color: var(--card-bg);
-    border-radius: 15px;
-    box-shadow: 0 10px 30px var(--shadow-color);
-    padding: 20px;
+.branch{
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(1px) saturate(180%);
+    border: 0.0625rem solid rgba(255, 255, 255, 0.8);
+    border-radius: 2rem;
+    padding: 1.25rem;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2), inset 0 4px 20px rgba(255, 255, 255, 0.2);
     width: 300px;
     height : 123px;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border-bottom: 5px solid transparent;
-    position: relative;
     overflow: hidden;
     display: inline-block;
     text-align: left;
 }
-
-
-.branch::before {
+.branch::after{
     content: '';
     position: absolute;
     top: 0;
-    border-color : white;
     left: 0;
     width: 100%;
-    height: 5px;
-    background: var(--bordertop);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease;
+    height: 100%;
+    border-radius: 2rem;
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    box-shadow: inset -10px -8px 0px -11px rgba(255, 255, 255, 1),
+    inset 0px -9px 0px -8px rgba(255, 255, 255, 0.5);
+    opacity: 0.6;
+    z-index: -1;
+    filter: blur(1px) drop-shadow(10px 4px 6px black) brightness(115%);
+    pointer-events: none;
 }
 
+
+
 .branch:hover {
-    transform: translateY(-10px) scale(1.03);
+    transform: scale(1.03);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
     border-bottom: 5px solid var(--borderbottom);
 }
@@ -508,14 +513,14 @@ footer .container {
     background-color: var(--yearsection);
     color: white;
     padding: 10px 20px;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-bottom: 20px;
 }
 
 .semester-title {
     background-color: var(--semestersection);
     color: white;
-    border-radius: 4px;
+    border-radius: 10px;
     margin: 10px 0;
     font-size: 1.1rem;
     font-style: italic;
@@ -578,15 +583,33 @@ details:not([open]) .course-list {
     overflow: hidden;
 }
 .course-card {
-    background-color: var(--card-bg);
-    border-radius: 8px;
-    box-shadow: 0 5px 15px var(--shadow-color);
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(1px) saturate(180%);
+    border-radius: 1.4rem;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2), inset 0 4px 20px rgba(255, 255, 255, 0.2);
     padding: 5px;
     transition: all 0.3s ease;
     margin-bottom: 10px;
     flex-grow: 1;
     border-top: 3px solid transparent;
     border-left: 3px solid transparent;
+}
+.course-card::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 1.4rem;
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    box-shadow: inset -10px -8px 0px -11px rgba(255, 255, 255, 1),
+    inset 0px -9px 0px -8px rgba(255, 255, 255, 1);
+    opacity: 0.6;
+    z-index: -1;
+    filter: blur(1px) drop-shadow(10px 4px 6px black) brightness(115%);
+    pointer-events: none;
 }
 .about-me{
     background-color: var(--card-bg);
@@ -601,9 +624,7 @@ details:not([open]) .course-list {
 
 .course-card:hover {
     border-top: 3px solid var(--bordercard);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
-
 
 .course-card.open {
     box-shadow: 0 8px 25px rgba(0, 86, 179, 0.15);
@@ -636,7 +657,7 @@ details:not([open]) .course-list {
     overflow: hidden;
     opacity: 0;
     transition: max-height 0.5s ease-in-out, opacity 0.3s ease-in-out;
-    margin-top: 15px;
+
 }
 .document-list p {
     margin : 0 15px;
@@ -646,24 +667,26 @@ details:not([open]) .course-list {
 .course-card.open .document-list {
     max-height: 200px;
     overflow-y: auto;
+    margin : 10px 0;
     opacity: 1;
     width: 100%;
 }
 .document-list::-webkit-scrollbar {
     width: 8px;
-    background: var(--card-bg);
+
+    background: transparent;
     border-radius: 8px;
 }
 .document-list::-webkit-scrollbar-thumb {
     background: linear-gradient(135deg, #ff831d, white);
     border-radius: 8px;
-    min-height: 30px;
+    min-height: 40px;
 }
 [data-theme="dark"] .document-list::-webkit-scrollbar-thumb {
     background: linear-gradient(135deg, #677db9, #bccfdb);
 }
 .document-list::-webkit-scrollbar-track {
-    background: var(--card-bg);
+    background-color: transparent;
     border-radius: 8px;
 }
 .document-item {
@@ -1001,3 +1024,4 @@ details:not([open]) .course-list {
         margin-right: auto;
     }
 }
+

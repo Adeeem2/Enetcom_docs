@@ -4,6 +4,8 @@ const updates = [
     "23/05/2025 : Added dark mode toggle and improved UI.",
     "03/06/2025 : Added a new section for upcoming features.",
     "04/06/2025 : Added a pomodoro timer to help with productivity.",
+    "07/06/2025 : Added a music player with a rotating album cover.",
+    "13/06/2025 : Added a glass effect to branches and improved the overall design.",
 ];
 const carousel = document.getElementById("carousel");
 let i = 0;
