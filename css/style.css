@@ -131,21 +131,19 @@ ul {
     display: inline-block;
     color: var(--text-color);
     padding: 6px 8px;
-    border-radius: 11px;
+    border-radius: 16px;
     font-size: 0.95rem;
     transition: all 0.3s;
     margin: 5px 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border: 1px solid var(--btncolor);
+    border: 2px solid var(--btncolor);
     font-weight: 600;
     letter-spacing: 0.5px;
 }
 .btn:hover {
-    transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Header Styles */
 header {
     background-color: var(--header-bg);
     padding: 8px 8px;
@@ -164,7 +162,7 @@ header {
 
 }
 
-/* Theme Toggle Button */
+
 .theme-toggle {
     position: relative;
     display: flex;
@@ -185,21 +183,17 @@ header {
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    background-color: rgba(0, 0, 0, 0.05);
 }
 
 [data-theme="dark"] #theme-toggle-btn {
     color: #FFD700;
-    background-color: rgba(255, 255, 255, 0.1);
 }
 
 #theme-toggle-btn:hover {
     transform: rotate(30deg);
-    background-color: rgba(0, 0, 0, 0.1);
 }
 
 [data-theme="dark"] #theme-toggle-btn:hover {
-    background-color: rgba(255, 255, 255, 0.2);
 }
 [data-theme="dark"] .logo img {
     filter: brightness(0) invert(1);

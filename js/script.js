@@ -1,17 +1,13 @@
-// Mobile and Theme Toggle
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('nav');
     const themeToggleBtn = document.getElementById('theme-toggle-btn');
-    const moonIcon = '<i class="fas fa-moon"></i>';
-    const sunIcon = '<i class="fas fa-sun"></i>';
+    const moonIcon = '<i class="fa-regular fa-moon"></i>';
+    const sunIcon = '<i class="fa-regular fa-sun"></i>';
 
-    // Theme toggle functionality
     if (themeToggleBtn) {
-        // Check for saved theme preference or use default light theme
         const currentTheme = localStorage.getItem('theme') || 'light';
 
-        // Apply the saved theme on page load
         if (currentTheme === 'dark') {
             document.documentElement.setAttribute('data-theme', 'dark');
             themeToggleBtn.innerHTML = sunIcon;
@@ -20,11 +16,9 @@ document.addEventListener('DOMContentLoaded', function() {
             themeToggleBtn.innerHTML = moonIcon;
         }
 
-        // Toggle theme when button is clicked
         themeToggleBtn.addEventListener('click', function() {
             let theme = 'light';
 
-            // If current theme is light, switch to dark
             if (document.documentElement.getAttribute('data-theme') === 'light') {
                 document.documentElement.setAttribute('data-theme', 'dark');
                 themeToggleBtn.innerHTML = sunIcon;
@@ -35,12 +29,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 theme = 'light';
             }
 
-            // Save theme preference to localStorage
             localStorage.setItem('theme', theme);
         });
     }
 
-    // Mobile menu toggle
     if (menuToggle) {
         menuToggle.addEventListener('click', function() {
             nav.classList.toggle('active');
